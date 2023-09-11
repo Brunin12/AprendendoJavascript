@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primeiros passos com DOM</title>
+    <style>
+      body {
+        background-color: #1776cf;
+        color: white;
+        font-family: Segoe UI;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Iniciando Estudos com DOM</h1>
+    <p>Aprendendo a usar <strong>DOM</strong> em JavaScript</p>
+    <p id="p" >aqui vai o resultado</p>
+    <div id='msg' onclick="inter()">Click em mim</div>
+    <p>Escolha a cor mais bonita</p>
+    <input type="color" id="input" value="#1776cf">
+    <input type="color" id="input2" value="#ffffff">
+    <p>quando você nasceu?</p>
+    <input type="date" id="data">
+    <p id="span1"></p>
+   
+    <script>
+      var input;
+      var input2;
+      var data;
+      var span1;
+      var body = document.body
+      setInterval(() => {
+
+        data = document.querySelector('#data')
+        span1 = document.querySelector('#span1').innerHTML = 'nasceu em: ' + data.value
+        input = document.querySelector('input').value
+        input2 = document.querySelector('#input2').value
+        body.style.background = input
+        body.style.color = input2
+      }, 500)
+    </script>
+  </body>
+</html>

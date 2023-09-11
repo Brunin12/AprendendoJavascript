@@ -1,0 +1,5 @@
+for (var c = 40; c <= 40; c--) {
+  console.log(`passo ${c}`);
+  c++;
+} 
+

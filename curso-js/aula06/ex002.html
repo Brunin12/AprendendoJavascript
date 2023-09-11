@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu 4596 programa</title>
+    <style>
+      body {
+        background-image: linear-gradient(to right, #9b27e9, #d390f1);
+        color: white;
+        font: menu;
+      }
+
+      #text {
+        visibility: hidden;
+        border: 2px black solid;
+        color: white;
+        background-color: gray;
+        min-height: 300px;
+      }
+
+      #textinput{
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        border: 2px black solid;
+        color: white;
+        background-color: black;
+        height: 100px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Olá, Mundo!</h1>
+    <p>Hehehe sai de mim maldição do Hello World</p>
+    <div id="text">
+      <div id="textinput">
+        <input id="texto" placeholder="texto aqui" />
+        <input type="submit" onclick="enviar()" placeholder="enviar" />
+      </div>
+      <br>
+      <span id="chat"></span>
+    </div>
+    <script>
+      var text = document.getElementById("text");
+      var textZ = document.getElementById("text-zone");
+      var isText = false;
+      var inf = Infinity;
+      var i = 0;
+      var history = [];
+      var nome = prompt("qual seu nome?");
+      alert("ola, sr " + nome);
+
+      function enviar() {
+        var texto = document.getElementById("texto").value;
+        var span = document.createElement("span");
+        var br = document.createElement("br");
+        var conteudoNovo = document.createTextNode("você: " + texto);
+        span.appendChild(conteudoNovo);
+
+        var divAtual = document.getElementById("textinput");
+        document.body.insertBefore(span, divAtual);
+        document.body.insertBefore(br, divAtual);
+      }
+
+      document.addEventListener("keypress", function (e) {
+        history[i] = e.key;
+        i++;
+        if (!isText) {
+          if (
+            (history[i - 6] == "i") &
+            (history[i - 5] == "s") &
+            (history[i - 4] == "b") &
+            (history[i - 3] == "r") &
+            (history[i - 2] == "1") &
+            (history[i - 1] == "Enter")
+          ) {
+            alert("cheat ativado");
+            isText = true;
+          }
+          alert("apertou " + e.key);
+        } else {
+          text.style = "visibility: visible;";
+        }
+      });
+
+      document.addEventListener("click", () => {
+        if (!isText) {
+          alert("click...");
+        }
+      });
+    </script>
+  </body>
+</html>

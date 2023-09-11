@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Corrida</title>
+  </head>
+  <body
+    style="
+      background-image: url('pista.jpg');
+      background-repeat: no-repeat;
+      background-size: 100%;
+    "
+  >
+    <img style="height: 91px" id="carro" src="carro.png" alt="seu carro" />
+    <br />
+    <br />
+    <img
+      style="height: 100px"
+      id="carro2"
+      src="carro2.png"
+      alt="seu oponente"
+    />
+    <br /><br /><br />
+
+    <button type="submit" id="resetar">resetar</button>
+    <div class="info">
+      <h3>Comandos:</h3>
+      <h4>Jogador 1 | Carro Vermelho</h4>
+      <ul>
+        <li>Movimento: cetas do teclado, "→" para andar e "←" para dar ré</li>
+      </ul>
+          <h4>Jogador 2 | Carro Preto</h4>
+      <ul>
+        <li>Movimento: letras do teclado, "D" para andar e "A" para dar ré</li>
+      </ul>
+    </div>
+    <p>Pontos jogador 1: <span id="pontos1"></span></p>
+    <p>Pontos jogador 2: <span id="pontos2"></span></p>
+    <p>Velocidade: <span id="vel"></span></p>
+
+
+    <footer>
+      <script src="../jquery.js"></script>
+      <script src="script.js"></script>
+    </footer>
+  </body>
+</html>

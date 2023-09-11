@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Condicionais</title>
+    <style>
+      body {
+        background-color: rgb(61, 108, 180);
+        color: white;
+        font: normal 15pt JetBrains Mono;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gringo Detecter</h1>
+    em que pais você mora? <br />
+    <input type="text" name="state" id="state" />
+    <input type="button" id="btn" value="enviar" />
+    <div id="res"></div>
+  </body>
+  <script>
+    var btn = document.querySelector("input#btn");
+    btn.addEventListener("click", verify);
+
+    function verify() {
+      var res = document.querySelector("div#res");
+      var stateN = document.querySelector("input#state").value;
+      res.innerHTML = `você mora no ${stateN}`;
+      var state = stateN.toUpperCase();
+      if (state === "BRASIL") {
+        res.innerHTML += "<br /><p>você e brasileiro</p>";
+      } else {
+        res.innerHTML += "<br /><em>Gringoooou</em>";
+      }
+    }
+  </script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manipulad o Eventos com DOM</title>
+    <style>
+      p {
+        font: normal 15pt JetBrains Mono;
+      }
+      div#area {
+        font: normal 20pt JetBrains Mono;
+        background-color: #0b1;
+
+        color: #fff;
+        width: 400px;
+        height: 400px;
+        line-height: 400px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="area">intraja aqui...</div>
+  </body>
+  <script>
+    let div = document.querySelector("#area");
+
+    div.addEventListener("click", clicou);
+    div.addEventListener("mouseenter", entrar);
+    div.addEventListener("mouseout", saio);
+
+    function clicou() {
+      div.innerText = "clicou!";
+    }
+    function entrar() {
+      div.innerText = "entrou!";
+    }
+    function saio() {
+      div.innerText = "saio!";
+    }
+  </script>
+</html>
